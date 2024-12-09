@@ -15,4 +15,4 @@ services:
       SERVER_NAME: "synergy-server-docker by Teller"
       SERVER_DESCRIPTION: "synergy-server-docker by Teller"
     volumes:
-      - ./palworld:/palworld/
+      - ./synergy:/synergy/
