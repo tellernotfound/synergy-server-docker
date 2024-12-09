@@ -4,7 +4,6 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/tellernotfound/synergy-server-docker)](https://hub.docker.com/r/tellernotfound/synergy-server-docker)
 [![Docker Stars](https://img.shields.io/docker/stars/tellernotfound/synergy-server-docker)](https://hub.docker.com/r/tellernotfound/synergy-server-docker)
 [![Image Size](https://img.shields.io/docker/image-size/tellernotfound/synergy-server-docker/latest)](https://hub.docker.com/r/tellernotfound/synergy-server-docker/tags)
-[![Discord](https://img.shields.io/discord/1200397673329594459?logo=discord&label=Discord&link=https%3A%2F%2Fdiscord.gg%2FUxBxStPAAE)](https://discord.com/invite/UxBxStPAAE)
 
 [![CodeFactor](https://www.codefactor.io/repository/github/tellernotfound/synergy-server-docker/badge)](https://www.codefactor.io/repository/github/tellernotfound/synergy-server-docker)
 [![Release](https://github.com/tellernotfound/synergy-server-docker/actions/workflows/release.yml/badge.svg)](https://github.com/tellernotfound/synergy-server-docker/actions/workflows/release.yml)
@@ -13,9 +12,9 @@
 
 [![Docker Hub](https://img.shields.io/badge/Docker_Hub-synergy-blue?logo=docker)](https://hub.docker.com/r/tellernotfound/synergy-server-docker)
 [![GHCR](https://img.shields.io/badge/GHCR-synergy-blue?logo=docker)](https://github.com/tellernotfound/synergy-server-docker/pkgs/container/synergy-server-docker)
-[comment]: <> (Artifact hub da ricercare per inserirlo https://artifacthub.io/badge/repository/palworld-server-chart)
 
 # WORK IN PROGRESS!!
+## Special thanks to palworld-server-docker repo
 
 This is a Docker container to help you get started with hosting your own Synergy
 This Docker container has been tested and will work on the following OS:
