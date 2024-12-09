@@ -7,7 +7,7 @@ if [[ "$(id -u)" -eq 0 ]] && [[ "$(id -g)" -eq 0 ]]; then
         LogAction "EXECUTING USERMOD"
         usermod -o -u "${PUID}" steam
         groupmod -o -g "${PGID}" steam
-        chown -R steam:steam /palworld /home/steam/
+        chown -R steam:steam /home/steam/
     else
         LogError "Running as root is not supported, please fix your PUID and PGID!"
         exit 1
@@ -17,12 +17,7 @@ elif [[ "$(id -u)" -eq 0 ]] || [[ "$(id -g)" -eq 0 ]]; then
    exit 1
 fi
 
-if ! [ -w "/palworld" ]; then
-    LogError "/palworld is not writable."
-    exit 1
-fi
-
-mkdir -p /palworld/backups
+mkdir -p /home/steam/synergy/backups
 
 # shellcheck disable=SC2317
 term_handler() {
@@ -30,7 +25,8 @@ term_handler() {
 
     if ! shutdown_server; then
         # Does not save
-        kill -SIGTERM "$(pidof PalServer-Linux-Shipping)"
+	# TODO: Check name of process created by synergy
+        kill -SIGTERM "$(pidof SynServer-Linux-Shipping)"
     fi
 
     tail --pid="$killpid" -f 2>/dev/null

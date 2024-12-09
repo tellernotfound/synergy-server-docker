@@ -6,11 +6,11 @@ source "/home/steam/server/helper_functions.sh"
 # shellcheck source=scripts/helper_install.sh
 source "/home/steam/server/helper_install.sh"
 
-dirExists "/palworld" || exit
-isWritable "/palworld" || exit
-isExecutable "/palworld" || exit
+dirExists "/home/steam/synergy" || exit
+isWritable "/home/steam/synergy" || exit
+isExecutable "/home/steam/synergy" || exit
 
-cd /palworld || exit
+cd /home/steam/synergy || exit
 
 # Get the architecture using dpkg
 architecture=$(dpkg --print-architecture)

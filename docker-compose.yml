@@ -10,7 +10,7 @@ services:
       - 27015:27015/udp
     environment:
       PLAYERS: 16  # Optional but recommended
-      SERVER_PASSWORD: "multigordonfreeemen"  # Optional but recommended
+      SERVER_PASSWORD: "multigordonfreemen"  # Optional but recommended
       COMMUNITY: false  # Enable this if you want your server to show up in the community servers tab, USE WITH SERVER_PASSWORD!
       SERVER_NAME: "synergy-server-docker by Teller"
       SERVER_DESCRIPTION: "synergy-server-docker by Teller"
