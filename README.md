@@ -1,25 +1,23 @@
-# Palworld Dedicated Server Docker
+# Synergy Dedicated Server Docker
 
-[![Release](https://img.shields.io/github/v/release/thijsvanloef/palworld-server-docker)](https://github.com/thijsvanloef/palworld-server-docker/releases)
-[![Docker Pulls](https://img.shields.io/docker/pulls/thijsvanloef/palworld-server-docker)](https://hub.docker.com/r/thijsvanloef/palworld-server-docker)
-[![Docker Stars](https://img.shields.io/docker/stars/thijsvanloef/palworld-server-docker)](https://hub.docker.com/r/thijsvanloef/palworld-server-docker)
-[![Image Size](https://img.shields.io/docker/image-size/thijsvanloef/palworld-server-docker/latest)](https://hub.docker.com/r/thijsvanloef/palworld-server-docker/tags)
+[![Release](https://img.shields.io/github/v/release/tellernotfound/synergy-server-docker)](https://github.com/tellernotfound/synergy-server-docker/releases)
+[![Docker Pulls](https://img.shields.io/docker/pulls/tellernotfound/synergy-server-docker)](https://hub.docker.com/r/tellernotfound/synergy-server-docker)
+[![Docker Stars](https://img.shields.io/docker/stars/tellernotfound/synergy-server-docker)](https://hub.docker.com/r/tellernotfound/synergy-server-docker)
+[![Image Size](https://img.shields.io/docker/image-size/tellernotfound/synergy-server-docker/latest)](https://hub.docker.com/r/tellernotfound/synergy-server-docker/tags)
 [![Discord](https://img.shields.io/discord/1200397673329594459?logo=discord&label=Discord&link=https%3A%2F%2Fdiscord.gg%2FUxBxStPAAE)](https://discord.com/invite/UxBxStPAAE)
 
-[![CodeFactor](https://www.codefactor.io/repository/github/thijsvanloef/palworld-server-docker/badge)](https://www.codefactor.io/repository/github/thijsvanloef/palworld-server-docker)
-[![Release](https://github.com/thijsvanloef/palworld-server-docker/actions/workflows/release.yml/badge.svg)](https://github.com/thijsvanloef/palworld-server-docker/actions/workflows/release.yml)
-[![Linting](https://github.com/thijsvanloef/palworld-server-docker/actions/workflows/linting.yml/badge.svg)](https://github.com/thijsvanloef/palworld-server-docker/actions/workflows/linting.yml)
-[![Security](https://github.com/thijsvanloef/palworld-server-docker/actions/workflows/security.yml/badge.svg)](https://github.com/thijsvanloef/palworld-server-docker/actions/workflows/security.yml)
+[![CodeFactor](https://www.codefactor.io/repository/github/tellernotfound/synergy-server-docker/badge)](https://www.codefactor.io/repository/github/tellernotfound/synergy-server-docker)
+[![Release](https://github.com/tellernotfound/synergy-server-docker/actions/workflows/release.yml/badge.svg)](https://github.com/tellernotfound/synergy-server-docker/actions/workflows/release.yml)
+[![Linting](https://github.com/tellernotfound/synergy-server-docker/actions/workflows/linting.yml/badge.svg)](https://github.com/tellernotfound/synergy-server-docker/actions/workflows/linting.yml)
+[![Security](https://github.com/tellernotfound/synergy-server-docker/actions/workflows/security.yml/badge.svg)](https://github.com/tellernotfound/synergy-server-docker/actions/workflows/security.yml)
 
-[![Docker Hub](https://img.shields.io/badge/Docker_Hub-palworld-blue?logo=docker)](https://hub.docker.com/r/thijsvanloef/palworld-server-docker)
-[![GHCR](https://img.shields.io/badge/GHCR-palworld-blue?logo=docker)](https://github.com/thijsvanloef/palworld-server-docker/pkgs/container/palworld-server-docker)
-[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/palworld-server-chart)](https://artifacthub.io/packages/search?repo=palworld-server-chart)
+[![Docker Hub](https://img.shields.io/badge/Docker_Hub-synergy-blue?logo=docker)](https://hub.docker.com/r/tellernotfound/synergy-server-docker)
+[![GHCR](https://img.shields.io/badge/GHCR-synergy-blue?logo=docker)](https://github.com/tellernotfound/synergy-server-docker/pkgs/container/synergy-server-docker)
+[comment]: <> (Artifact hub da ricercare per inserirlo https://artifacthub.io/badge/repository/palworld-server-chart)
 
-[Chat with the community on Discord](https://discord.gg/UxBxStPAAE)
+# WORK IN PROGRESS!!
 
-This is a Docker container to help you get started with hosting your own
-[Palworld](https://store.steampowered.com/app/1623730/Palworld/) dedicated server.
-
+This is a Docker container to help you get started with hosting your own Synergy
 This Docker container has been tested and will work on the following OS:
 
 * Linux (Ubuntu/Debian)
@@ -27,33 +25,6 @@ This Docker container has been tested and will work on the following OS:
 * MacOS (including Apple Silicon M1/M2/M3).
 
 This container has also been tested and will work on both `x64` and `ARM64` based CPU architecture.
-
-> [!IMPORTANT]
-> Looking to host a server for Xbox players? [Follow this guide here!](https://palworld-server-docker.loef.dev/quick-setup-xbox)
-
-## Sponsors
-
-| Company                                                                                                                                                                                                                                                                                                                       | About                                                                                                                                                                                                                                            |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <!-- markdownlint-disable-line --><a href="https://indifferentbroccoli.com/palworld-server-hosting"><img src="https://github.com/thijsvanloef/palworld-server-docker/assets/58031337/f091b205-d6be-49fe-a508-4a23087023a1" width="150px" alt="Indifferent Broccoli" /></a><p align="center">indifferent broccoli \(\:\|\)</p> | Thank you to our sponsor indifferent broccoli. If you decide to rent a Palworld server, rather than host yourself, try indifferent broccoli's [Palword server hosting](https://indifferentbroccoli.com/palworld-server-hosting) 2-day free trial |
-
-### Massive shoutout to the following individual sponsors
-
-<p align="left"><!-- markdownlint-disable-line --><!-- markdownlint-disable-next-line -->
-<!-- sponsors --><a href="https://github.com/AshishT112203"><img src="https://github.com/AshishT112203.png" width="50px" alt="AshishT112203" /></a>&nbsp;&nbsp;<a href="https://github.com/indifferentbroc"><img src="https://github.com/indifferentbroc.png" width="50px" alt="indifferentbroc" /></a>&nbsp;&nbsp;<!-- sponsors -->
-</p>
-
-## Official Documentation
-
-[![Documentation](https://github.com/thijsvanloef/palworld-server-docker/assets/58031337/b92d76d1-5efb-438d-9ffd-5385544a831b)](https://palworld-server-docker.loef.dev/)
-
-## Server Requirements
-
-| Resource | Minimum | Recommended                              |
-|----------|---------|------------------------------------------|
-| CPU      | 4 cores | 4+ cores                                 |
-| RAM      | 16GB    | Recommend over 32GB for stable operation |
-| Storage  | 8GB     | 20GB                                     |
 
 ## How to use
 
@@ -65,10 +36,10 @@ This repository includes an example [docker-compose.yml](/docker-compose.yml) fi
 
 ```yml
 services:
-   palworld:
-      image: thijsvanloef/palworld-server-docker:latest
+   synergy:
+      image: tellernotfound/synergy-server-docker:latest
       restart: unless-stopped
-      container_name: palworld-server
+      container_name: synergy-server
       stop_grace_period: 30s # Set to however long you are willing to wait for the container to gracefully stop
       ports:
         - 8211:8211/udp
@@ -86,11 +57,11 @@ services:
          TZ: "UTC"
          ADMIN_PASSWORD: "adminPasswordHere"
          COMMUNITY: false  # Enable this if you want your server to show up in the community servers tab, USE WITH SERVER_PASSWORD!
-         SERVER_NAME: "palworld-server-docker by Thijs van Loef"
-         SERVER_DESCRIPTION: "palworld-server-docker by Thijs van Loef"
+         SERVER_NAME: "synergy-server-docker by Thijs van Loef"
+         SERVER_DESCRIPTION: "synergy-server-docker by Thijs van Loef"
          ALLOW_CONNECT_PLATFORM: "Steam" # Defaults to "Steam" if not set, set this to "Xbox" if you want to host a server for Xbox players. CROSSPLAY BETWEEN XBOX-STEAM IS NOT YET SUPPORTED
       volumes:
-         - ./palworld:/palworld/
+         - ./synergy:/synergy/
 ```
 
 As an alternative, you can copy the [.env.example](.env.example) file to a new file called **.env** file.
@@ -99,10 +70,10 @@ values. Modify your [docker-compose.yml](docker-compose.yml) to this:
 
 ```yml
 services:
-   palworld:
-      image: thijsvanloef/palworld-server-docker:latest
+   synergy:
+      image: tellernotfound/synergy-server-docker:latest
       restart: unless-stopped
-      container_name: palworld-server
+      container_name: synergy-server
       stop_grace_period: 30s # Set to however long you are willing to wait for the container to gracefully stop
       ports:
         - 8211:8211/udp
@@ -111,7 +82,7 @@ services:
       env_file:
          -  .env
       volumes:
-         - ./palworld:/palworld/
+         - ./synergy:/synergy/
 ```
 
 ### Docker Run
@@ -120,10 +91,10 @@ Change every <> to your own configuration
 
 ```bash
 docker run -d \
-    --name palworld-server \
+    --name synergy-server \
     -p 8211:8211/udp \
     -p 27015:27015/udp \
-    -v ./palworld:/palworld/ \
+    -v ./synergy:/synergy/ \
     -e PUID=1000 \
     -e PGID=1000 \
     -e PORT=8211 \
@@ -135,12 +106,12 @@ docker run -d \
     -e ADMIN_PASSWORD="adminPasswordHere" \
     -e SERVER_PASSWORD="worldofpals" \
     -e COMMUNITY=false \
-    -e SERVER_NAME="palworld-server-docker by Thijs van Loef" \
-    -e SERVER_DESCRIPTION="palworld-server-docker by Thijs van Loef" \
+    -e SERVER_NAME="synergy-server-docker by Thijs van Loef" \
+    -e SERVER_DESCRIPTION="synergy-server-docker by Thijs van Loef" \
     -e ALLOW_CONNECT_PLATFORM="Steam" \
     --restart unless-stopped \
     --stop-timeout 30 \
-    thijsvanloef/palworld-server-docker:latest
+    tellernotfound/synergy-server-docker:latest
 ```
 
 As an alternative, you can copy the [.env.example](.env.example) file to a new file called **.env** file.
@@ -149,14 +120,14 @@ correct values. Change your docker run command to this:
 
 ```bash
 docker run -d \
-    --name palworld-server \
+    --name synergy-server \
     -p 8211:8211/udp \
     -p 27015:27015/udp \
-    -v ./palworld:/palworld/ \
+    -v ./synergy:/synergy/ \
     --env-file .env \
     --restart unless-stopped \
     --stop-timeout 30 \
-    thijsvanloef/palworld-server-docker:latest
+    tellernotfound/synergy-server-docker:latest
 ```
 
 ### Kubernetes
@@ -185,12 +156,8 @@ Below we assume your UID is 1000 and your GID is 1001
 * In docker compose add `user: 1000:1001` above ports.
 
 If you wish to run it with a different UID/GID than your own you will need to change the ownership of the directory that
-is being bind: `chown UID:GID palworld/`
-or by changing the permissions for all other: `chmod o=rwx palworld/`
-
-#### Using helm chart
-
-The official helm chart can be found in a seperate repository, [palworld-server-chart](https://github.com/Twinki14/palworld-server-chart)
+is being bind: `chown UID:GID synergy/`
+or by changing the permissions for all other: `chmod o=rwx synergy/`
 
 ### Environment variables
 
@@ -218,9 +185,9 @@ It is highly recommended you set the following environment values before startin
 | SERVER_PASSWORD                            | Secure your community server with a password                                                                                                                                                        |                                                                                                    | "string"                                                                                                          | 0.1.0            |
 | ADMIN_PASSWORD                             | Secure administration access in the server with a password                                                                                                                                          |                                                                                                    | "string"                                                                                                          | 0.4.0            |
 | UPDATE_ON_BOOT**                           | Update/Install the server when the docker container starts (THIS HAS TO BE ENABLED THE FIRST TIME YOU RUN THE CONTAINER)                                                                            | true                                                                                               | true/false                                                                                                        | 0.3.0            |
-| RCON_ENABLED***                            | Enable RCON for the Palworld server                                                                                                                                                                 | true                                                                                               | true/false                                                                                                        | 0.1.0            |
+| RCON_ENABLED***                            | Enable RCON for the synergy server                                                                                                                                                                 | true                                                                                               | true/false                                                                                                        | 0.1.0            |
 | RCON_PORT                                  | RCON port to connect to                                                                                                                                                                             | 25575                                                                                              | 1024-65535                                                                                                        | 0.1.0            |
-| REST_API_ENABLED                           | Enable REST API for the palworld server                                                                                                                                                             | false                                                                                              | true/false                                                                                                        | 0.35.0           |
+| REST_API_ENABLED                           | Enable REST API for the synergy server                                                                                                                                                             | false                                                                                              | true/false                                                                                                        | 0.35.0           |
 | REST_API_PORT                              | REST API port to connect to                                                                                                                                                                         | 8212                                                                                               | 1024-65535                                                                                                        | 0.35.0           |
 | QUERY_PORT                                 | Query port used to communicate with Steam servers                                                                                                                                                   | 27015                                                                                              | 1024-65535                                                                                                        | 0.1.0            |
 | ALLOW_CONNECT_PLATFORM                     | Specify if you are hosting a dedicated server for Steam or Xbox players                                                                                                                             | Steam                                                                                              | Steam/Xbox                                                                                                        | 0.38.0           |
@@ -237,7 +204,7 @@ It is highly recommended you set the following environment values before startin
 | AUTO_REBOOT_WARN_MINUTES                   | How long to wait to reboot the server, after the player were informed.                                                                                                                              | 5                                                                                                  | Integer                                                                                                           | 0.21.0           |
 | AUTO_REBOOT_EVEN_IF_PLAYERS_ONLINE         | Restart the Server even if there are players online.                                                                                                                                                | false                                                                                              | true/false                                                                                                        | 0.21.0           |
 | TARGET_MANIFEST_ID                         | Locks game version to corespond with Manifest ID from Steam Download Depot.                                                                                                                         |                                                                                                    | See [Manifest ID Table](#locking-specific-game-version)                                                           | 0.27.0           |
-| INSTALL_BETA_INSIDER                       | Installs the latest Beta version of the Palworld dedicated server                                                                                                                                   | false                                                                                              | true/false                                                                                                        | 0.38.0           |
+| INSTALL_BETA_INSIDER                       | Installs the latest Beta version of the synergy dedicated server                                                                                                                                   | false                                                                                              | true/false                                                                                                        | 0.38.0           |
 | DISCORD_WEBHOOK_URL                        | Discord webhook url found after creating a webhook on a discord server.                                                                                                                             |                                                                                                    | `https://discord.com/api/webhooks/<webhook_id>`                                                                   | 0.22.0           |
 | DISCORD_SUPPRESS_NOTIFICATIONS             | Enables/Disables `@silent` messages for the server messages.                                                                                                                                        | false                                                                                              | boolean                                                                                                           | 0.34.0           |
 | DISCORD_CONNECT_TIMEOUT                    | Discord command initial connection timeout                                                                                                                                                          | 30                                                                                                 | !0                                                                                                                | 0.22.0           |
@@ -257,10 +224,10 @@ It is highly recommended you set the following environment values before startin
 | DISCORD_POST_SHUTDOWN_MESSAGE              | Discord message sent when server has stopped                                                                                                                                                        | Server is stopped!                                                                                 | "string"                                                                                                          | 0.31.0           |
 | DISCORD_POST_SHUTDOWN_MESSAGE_ENABLED      | If the Discord message is enabled for this message                                                                                                                                                  | true                                                                                               | boolean                                                                                                           | 0.31.0           |
 | DISCORD_POST_SHUTDOWN_MESSAGE_URL          | Discord Webhook URL for this message (if left empty will use DISCORD_WEBHOOK_URL)                                                                                                                   |                                                                                                    | "string"                                                                                                          | 0.31.0           |
-| DISCORD_PLAYER_JOIN_MESSAGE                | Discord message sent when player joins the server                                                                                                                                                   | `player_name` has joined Palworld!                                                                 | "string"                                                                                                          | 0.31.0           |
+| DISCORD_PLAYER_JOIN_MESSAGE                | Discord message sent when player joins the server                                                                                                                                                   | `player_name` has joined synergy!                                                                 | "string"                                                                                                          | 0.31.0           |
 | DISCORD_PLAYER_JOIN_MESSAGE_ENABLED        | If the Discord message is enabled for this message                                                                                                                                                  | true                                                                                               | boolean                                                                                                           | 0.31.0           |
 | DISCORD_PLAYER_JOIN_MESSAGE_URL            | Discord Webhook URL for this message (if left empty will use DISCORD_WEBHOOK_URL)                                                                                                                   |                                                                                                    | "string"                                                                                                          | 0.31.0           |
-| DISCORD_PLAYER_LEAVE_MESSAGE               | Discord message sent when player leaves the server                                                                                                                                                  | `player_name` has left Palworld.                                                                   | "string"                                                                                                          | 0.31.0           |
+| DISCORD_PLAYER_LEAVE_MESSAGE               | Discord message sent when player leaves the server                                                                                                                                                  | `player_name` has left synergy.                                                                   | "string"                                                                                                          | 0.31.0           |
 | DISCORD_PLAYER_LEAVE_MESSAGE_ENABLED       | If the Discord message is enabled for this message                                                                                                                                                  | true                                                                                               | boolean                                                                                                           | 0.31.0           |
 | DISCORD_PLAYER_LEAVE_MESSAGE_URL           | Discord Webhook URL for this message (if left empty will use DISCORD_WEBHOOK_URL)                                                                                                                   |                                                                                                    | "string"                                                                                                          | 0.31.0           |
 | DISCORD_PRE_BACKUP_MESSAGE                 | Discord message when starting to create a backup                                                                                                                                                    | Creating backup...                                                                                 | "string"                                                                                                          | 0.31.0           |
@@ -278,7 +245,7 @@ It is highly recommended you set the following environment values before startin
 | DISCORD_ERR_BACKUP_DELETE_MESSAGE          | Discord message when there has been an error removing older backups                                                                                                                                 | Unable to delete old backups, OLD_BACKUP_DAYS is not an integer. OLD_BACKUP_DAYS=`old_backup_days` | "string"                                                                                                          | 0.31.0           |
 | DISCORD_ERR_BACKUP_DELETE_MESSAGE_ENABLED  | If the Discord message is enabled for this message                                                                                                                                                  | true                                                                                               | boolean                                                                                                           | 0.31.0           |
 | DISCORD_ERR_BACKUP_DELETE_MESSAGE_URL      | Discord Webhook URL for this message (if left empty will use DISCORD_WEBHOOK_URL)                                                                                                                   |                                                                                                    | "string"                                                                                                          | 0.31.0           |
-| DISABLE_GENERATE_SETTINGS                  | Whether to automatically generate the PalWorldSettings.ini                                                                                                                                          | false                                                                                              | true/false                                                                                                        | 0.24.0           |
+| DISABLE_GENERATE_SETTINGS                  | Whether to automatically generate the synergySettings.ini                                                                                                                                          | false                                                                                              | true/false                                                                                                        | 0.24.0           |
 | DISABLE_GENERATE_ENGINE                    | Whether to automatically generate the Engine.ini                                                                                                                                                    | true                                                                                               | true/false                                                                                                        | 0.30.0           |
 | ENABLE_PLAYER_LOGGING                      | Enables Logging and announcing when players join and leave                                                                                                                                          | true                                                                                               | true/false                                                                                                        | 0.31.0           |
 | PLAYER_LOGGING_POLL_PERIOD                 | Polling period (in seconds) to check for players who have joined or left                                                                                                                            | 5                                                                                                  | !0                                                                                                                | 0.31.0           |
@@ -324,20 +291,20 @@ For the Box64 configurations, please see the their official documentation for mo
 
 ## Using RCON
 
-RCON is enabled by default for the palworld-server-docker image.
+RCON is enabled by default for the synergy-server-docker image.
 Opening the RCON CLI is quite easy:
 
 ```bash
-docker exec -it palworld-server rcon-cli "<command> <value>"
+docker exec -it synergy-server rcon-cli "<command> <value>"
 ```
 
 For example, you can broadcast a message to everyone in the server with the following command:
 
 ```bash
-docker exec -it palworld-server rcon-cli "Broadcast Hello everyone"
+docker exec -it synergy-server rcon-cli "Broadcast Hello everyone"
 ```
 
-This will open a CLI that uses RCON to write commands to the Palworld Server.
+This will open a CLI that uses RCON to write commands to the synergy Server.
 
 ### List of server commands
 
@@ -355,7 +322,7 @@ This will open a CLI that uses RCON to write commands to the Palworld Server.
 | Save                             | Save the world data.                                |
 | UnBanPlayer {SteamID}            | Unban player {SteamID} from the server.             |
 
-For a full list of commands go to: [https://tech.palworldgame.com/settings-and-operation/commands](https://tech.palworldgame.com/settings-and-operation/commands)
+For a full list of commands go to: [https://tech.synergygame.com/settings-and-operation/commands](https://tech.synergygame.com/settings-and-operation/commands)
 
 ## Using REST API
 
@@ -366,15 +333,15 @@ docker-compose.override.yml
 
 ```yaml
 services:
-  palworld:
+  synergy:
     environment:
       REST_API_ENABLED: true
 ```
 
-The palworld-server-docker image provides rcon-cli as well as rest-cli.
+The synergy-server-docker image provides rcon-cli as well as rest-cli.
 
 ```bash
-$ docker exec -it palworld-server rest-cli
+$ docker exec -it synergy-server rest-cli
 Usage: rest-cli <api> [options]
 api:
   announce <json> ... announce message.
@@ -399,19 +366,19 @@ For example, you can broadcast a message to everyone in the server with the foll
 CLI parameter style:
 
 ```bash
-docker exec -i palworld-server rest-cli announce "Broadcast Hello everyone"
+docker exec -i synergy-server rest-cli announce "Broadcast Hello everyone"
 ```
 
 JSON parameter style:
 
 ```bash
-docker exec -i palworld-server rest-cli announce '{"message":"Broadcast Hello everyone"}'
+docker exec -i synergy-server rest-cli announce '{"message":"Broadcast Hello everyone"}'
 ```
 
 JSON pipe style:
 
 ```bash
-echo '{"message":"Broadcast Hello everyone"}' | docker exec -i palworld-server rest-cli announce -
+echo '{"message":"Broadcast Hello everyone"}' | docker exec -i synergy-server rest-cli announce -
 ```
 
 rest-cli allows you to call REST APIs directly without exposing ports outside the container.
@@ -432,17 +399,17 @@ rest-cli allows you to call REST APIs directly without exposing ports outside th
 | shutdown {Seconds} {MessageText} | Shutdown the server         |
 | stop                             | Force stop the server.      |
 
-For an official documents go to: [https://tech.palworldgame.com/category/rest-api](https://tech.palworldgame.com/category/rest-api)
+For an official documents go to: [https://tech.synergygame.com/category/rest-api](https://tech.synergygame.com/category/rest-api)
 
 ## Creating a backup
 
 To create a backup of the game's save at the current point in time, use the command:
 
 ```bash
-docker exec palworld-server backup
+docker exec synergy-server backup
 ```
 
-This will create a backup at `/palworld/backups/`
+This will create a backup at `/synergy/backups/`
 
 The server will run a save before the backup if rcon is enabled.
 
@@ -451,7 +418,7 @@ The server will run a save before the backup if rcon is enabled.
 To restore from a backup, use the command:
 
 ```bash
-docker exec -it palworld-server restore
+docker exec -it synergy-server restore
 ```
 
 The `RCON_ENABLED` environment variable must be set to `true` to use this command.
@@ -463,18 +430,18 @@ The `RCON_ENABLED` environment variable must be set to `true` to use this comman
 
 ## Manually restore from a backup
 
-Locate the backup you want to restore in `/palworld/backups/` and decompress it.
+Locate the backup you want to restore in `/synergy/backups/` and decompress it.
 Need to stop the server before task.
 
 ```bash
 docker compose down
 ```
 
-Delete the old saved data folder located at `palworld/Pal/Saved/SaveGames/0/<old_hash_value>`.
+Delete the old saved data folder located at `synergy/Pal/Saved/SaveGames/0/<old_hash_value>`.
 
-Copy the contents of the newly decompressed saved data folder `Saved/SaveGames/0/<new_hash_value>` to `palworld/Pal/Saved/SaveGames/0/<new_hash_value>`.
+Copy the contents of the newly decompressed saved data folder `Saved/SaveGames/0/<new_hash_value>` to `synergy/Pal/Saved/SaveGames/0/<new_hash_value>`.
 
-Replace the DedicatedServerName inside `palworld/Pal/Saved/Config/LinuxServer/GameUserSettings.ini` with the new folder name.
+Replace the DedicatedServerName inside `synergy/Pal/Saved/Config/LinuxServer/GameUserSettings.ini` with the new folder name.
 
 ```ini
 DedicatedServerName=<new_hash_value>  # Replace it with your folder name.
@@ -560,7 +527,7 @@ timezone set with TZ
 > [!IMPORTANT]
 >
 > These Environment Variables/Settings are subject to change since the game is still in beta.
-> Check out the [official webpage for the supported parameters.](https://tech.palworldgame.com/optimize-game-balance)
+> Check out the [official webpage for the supported parameters.](https://tech.synergygame.com/optimize-game-balance)
 
 Converting server settings to environment variables follow the same principles (with some exceptions):
 
@@ -631,24 +598,24 @@ For example:
 | COOP_PLAYER_MAX_NUM                       | Maximum number of players in a guild                                                                                                                             | 4                                                                                            | Integer                                |
 | REGION                                    | Region                                                                                                                                                           |                                                                                              | String                                 |
 | USEAUTH                                   | Use authentication                                                                                                                                               | True                                                                                         | Boolean                                |
-| BAN_LIST_URL                              | Which ban list to use                                                                                                                                            | [https://api.palworldgame.com/api/banlist.txt](https://api.palworldgame.com/api/banlist.txt) | string                                 |
+| BAN_LIST_URL                              | Which ban list to use                                                                                                                                            | [https://api.synergygame.com/api/banlist.txt](https://api.synergygame.com/api/banlist.txt) | string                                 |
 | SHOW_PLAYER_LIST                          | Enable show player list                                                                                                                                          | True                                                                                         | Boolean                                |
 | SUPPLY_DROP_SPAN                          |  Interval for supply drop (minutes)                                                                                                                                         | 180                                                                                         | Integer                                |
 
 ### Manually
 
-When the server starts, a `PalWorldSettings.ini` file will be created in the following location: `<mount_folder>/Pal/Saved/Config/LinuxServer/PalWorldSettings.ini`
+When the server starts, a `synergySettings.ini` file will be created in the following location: `<mount_folder>/Pal/Saved/Config/LinuxServer/synergySettings.ini`
 
-Please keep in mind that the ENV variables will always overwrite the changes made to `PalWorldSettings.ini`.
+Please keep in mind that the ENV variables will always overwrite the changes made to `synergySettings.ini`.
 
 > [!IMPORTANT]
-> Changes can only be made to `PalWorldSettings.ini` while the server is off.
+> Changes can only be made to `synergySettings.ini` while the server is off.
 >
 > Any changes made while the server is live will be overwritten when the server stops.
 
-For a more detailed list of server settings go to: [Palworld Wiki](https://palworld.wiki.gg/wiki/PalWorldSettings.ini)
+For a more detailed list of server settings go to: [synergy Wiki](https://synergy.wiki.gg/wiki/synergySettings.ini)
 
-For more detailed server settings explanations go to: [shockbyte](https://shockbyte.com/billing/knowledgebase/1189/How-to-Configure-your-Palworld-server.html)
+For more detailed server settings explanations go to: [shockbyte](https://shockbyte.com/billing/knowledgebase/1189/How-to-Configure-your-synergy-server.html)
 
 ## Using discord webhooks
 
@@ -707,8 +674,8 @@ The manifest corresponds to the release date/update versions. Manifests can be f
 
 ## Reporting Issues/Feature Requests
 
-Issues/Feature requests can be submitted by using [this link](https://github.com/thijsvanloef/palworld-server-docker/issues/new/choose).
+Issues/Feature requests can be submitted by using [this link](https://github.com/tellernotfound/synergy-server-docker/issues/new/choose).
 
 ### Known Issues
 
-Known issues are listed in the [documentation](https://palworld-server-docker.loef.dev/known-issues/)
+Known issues are listed in the [documentation](https://synergy-server-docker.loef.dev/known-issues/)
