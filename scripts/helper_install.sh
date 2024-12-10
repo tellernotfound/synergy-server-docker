@@ -7,16 +7,16 @@ source "/home/steam/server/helper_functions.sh"
 # Returns 0 if game is installed
 # Returns 1 if game is not installed
 IsInstalled() {
-  if  [ -e /palworld/PalServer.sh ] && [ -e /palworld/steamapps/appmanifest_2394010.acf ]; then
+  if  [ -e /synergy/PalServer.sh ] && [ -e /synergy/steamapps/appmanifest_17520.acf ]; then
     return 0
   fi
   return 1
 }
 CreateACFFile() {
   local manifestId="$1"
-cat > /palworld/steamapps/appmanifest_2394010.acf  << EOL
+cat > /synergy/steamapps/appmanifest_17520.acf  << EOL
 "AppState" {
-      "appid"        			 "2394010"
+      "appid"        			 "17520"
       "Universe"              "1"
       "name"         			 "Palworld Dedicated Server"
       "StateFlags"            "4"
@@ -34,7 +34,7 @@ cat > /palworld/steamapps/appmanifest_2394010.acf  << EOL
               {
                       "manifest"      "4884950798805348056"
               }
-              "2394012"
+              "17523"
               {
                       "manifest"      "${manifestId}"
               }
@@ -60,7 +60,7 @@ UpdateRequired() {
 
   #check steam for latest version
   temp_file=$(mktemp)
-  http_code=$(curl https://api.steamcmd.net/v1/info/2394010 --output "$temp_file" --silent --location --write-out "%{http_code}")
+  http_code=$(curl https://api.steamcmd.net/v1/info/17520 --output "$temp_file" --silent --location --write-out "%{http_code}")
 
   if [ "$http_code" -ne 200 ]; then
       LogError "There was a problem reaching the Steam api. Unable to check for updates!"
@@ -70,7 +70,7 @@ UpdateRequired() {
   fi
 
   # Parse temp file for manifest id
-  LATEST_MANIFEST=$(grep -Po '"2394012".*"gid": "\d+"' <"$temp_file" | sed -r 's/.*("[0-9]+")$/\1/' | tr -d '"')
+  LATEST_MANIFEST=$(grep -Po '"17523".*"gid": "\d+"' <"$temp_file" | sed -r 's/.*("[0-9]+")$/\1/' | tr -d '"')
   rm "$temp_file"
 
   if [ -z "$LATEST_MANIFEST" ]; then
@@ -80,7 +80,7 @@ UpdateRequired() {
   fi
 
   # Parse current manifest from steam files
-  CURRENT_MANIFEST=$(awk '/manifest/{count++} count==2 {print $2; exit}' /palworld/steamapps/appmanifest_2394010.acf | tr -d '"')
+  CURRENT_MANIFEST=$(awk '/manifest/{count++} count==2 {print $2; exit}' /synergy/steamapps/appmanifest_17520.acf | tr -d '"')
   LogInfo "Current Version: $CURRENT_MANIFEST"
 
   # Log any updates available
@@ -136,25 +136,25 @@ InstallServer() {
       LogWarn "Installing latest beta version"
       if [ "${USE_DEPOT_DOWNLOADER}" == true ]; then
         LogWarn "Downloading server files using DepotDownloader"
-        DepotDownloader -app 2394010 -osarch 64 -dir /palworld -beta insiderprogram -validate
-        DepotDownloader -app 2394010 -depot 2394012 -osarch 64 -dir /tmp -beta insiderprogram -manifest-only
+        DepotDownloader -app 17520 -osarch 64 -dir /synergy -beta insiderprogram -validate
+        DepotDownloader -app 17520 -depot 17523 -osarch 64 -dir /tmp -beta insiderprogram -manifest-only
       else
-        /home/steam/steamcmd/steamcmd.sh +@sSteamCmdForcePlatformType linux +@sSteamCmdForcePlatformBitness 64 +force_install_dir "/palworld" +login anonymous +app_update 2394010 -beta insiderprogram validate +quit
+        /home/steam/steamcmd/steamcmd.sh +@sSteamCmdForcePlatformType linux +@sSteamCmdForcePlatformBitness 64 +force_install_dir "/synergy" +login anonymous +app_update 17520 -beta insiderprogram validate +quit
       fi
     else
       if [ "${USE_DEPOT_DOWNLOADER}" == true ]; then
         LogWarn "Downloading server files using DepotDownloader"
-        DepotDownloader -app 2394010 -osarch 64 -dir /palworld -validate
-        DepotDownloader -app 2394010 -depot 2394012 -osarch 64 -dir /tmp -manifest-only
+        DepotDownloader -app 17520 -osarch 64 -dir /synergy -validate
+        DepotDownloader -app 17520 -depot 17523 -osarch 64 -dir /tmp -manifest-only
       else
-        /home/steam/steamcmd/steamcmd.sh +@sSteamCmdForcePlatformType linux +@sSteamCmdForcePlatformBitness 64 +force_install_dir "/palworld" +login anonymous +app_update 2394010 validate +quit
+        /home/steam/steamcmd/steamcmd.sh +@sSteamCmdForcePlatformType linux +@sSteamCmdForcePlatformBitness 64 +force_install_dir "/synergy" +login anonymous +app_update 17520 validate +quit
       fi
     fi
 
     # Create ACF file for DepoDownloader downloads for script compatibility
     if [ "${USE_DEPOT_DOWNLOADER}" == true ]; then
       local manifestFile
-      manifestFile=$(find /tmp -type f -name "manifest_2394012_*.txt" | head -n 1)
+      manifestFile=$(find /tmp -type f -name "manifest_17523_*.txt" | head -n 1)
 
       if [ -z "$manifestFile" ]; then
         echo "DepotDownloader manifest file not found."
@@ -165,7 +165,7 @@ InstallServer() {
         if [ -z "$manifestId" ]; then
           echo "Manifest ID not found in DepotDownloader manifest file."
         else
-          mkdir -p /palworld/steamapps
+          mkdir -p /synergy/steamapps
           CreateACFFile "$manifestId"
         fi
 
@@ -184,11 +184,11 @@ InstallServer() {
   DiscordMessage "Install" "${DISCORD_PRE_UPDATE_BOOT_MESSAGE}" "in-progress" "${DISCORD_PRE_UPDATE_BOOT_MESSAGE_ENABLED}" "${DISCORD_PRE_UPDATE_BOOT_MESSAGE_URL}"
   if [ "${USE_DEPOT_DOWNLOADER}" == true ]; then
     LogWarn "Downloading server files using DepotDownloader"
-    DepotDownloader -app 2394010 -depot 2394012 -manifest "$targetManifest" -osarch 64 -dir /palworld -validate
-    DepotDownloader -app 2394010 -depot 1006 -osarch 64 -dir /palworld -validate
+    DepotDownloader -app 17520 -depot 17523 -manifest "$targetManifest" -osarch 64 -dir /synergy -validate
+    DepotDownloader -app 17520 -depot 17522 -osarch 64 -dir /synergy -validate
   else
-    /home/steam/steamcmd/steamcmd.sh +@sSteamCmdForcePlatformType linux +@sSteamCmdForcePlatformBitness 64 +force_install_dir "/palworld" +login anonymous +download_depot 2394010 2394012 "$targetManifest" +quit
-    cp -vr "/home/steam/steamcmd/linux32/steamapps/content/app_2394010/depot_2394012/." "/palworld/"
+    /home/steam/steamcmd/steamcmd.sh +@sSteamCmdForcePlatformType linux +@sSteamCmdForcePlatformBitness 64 +force_install_dir "/synergy" +login anonymous +download_depot 17520 17523 "$targetManifest" +quit
+    cp -vr "/home/steam/steamcmd/linux32/steamapps/content/app_17520/depot_17523/." "/synergy/"
   fi
   CreateACFFile "$targetManifest"
   DiscordMessage "Install" "${DISCORD_POST_UPDATE_BOOT_MESSAGE}" "success" "${DISCORD_POST_UPDATE_BOOT_MESSAGE_ENABLED}" "${DISCORD_POST_UPDATE_BOOT_MESSAGE_URL}"

@@ -6,11 +6,11 @@ source "/home/steam/server/helper_functions.sh"
 # shellcheck source=scripts/helper_install.sh
 source "/home/steam/server/helper_install.sh"
 
-dirExists "/home/steam/synergy" || exit
-isWritable "/home/steam/synergy" || exit
-isExecutable "/home/steam/synergy" || exit
+dirExists "/synergy" || exit
+isWritable "/synergy" || exit
+isExecutable "/synergy" || exit
 
-cd /home/steam/synergy || exit
+cd /synergy || exit
 
 # Get the architecture using dpkg
 architecture=$(dpkg --print-architecture)
@@ -45,64 +45,6 @@ else
     STARTCOMMAND=("./PalServer.sh")
 fi
 
-
-#Validate Installation
-if ! fileExists "${STARTCOMMAND[0]}"; then
-    LogError "Server Not Installed Properly"
-    exit 1
-fi
-
-isReadable "${STARTCOMMAND[0]}" || exit
-isExecutable "${STARTCOMMAND[0]}" || exit
-
-# Prepare Arguments
-if [ -n "${PORT}" ]; then
-    STARTCOMMAND+=("-port=${PORT}")
-fi
-
-if [ -n "${QUERY_PORT}" ]; then
-    STARTCOMMAND+=("-queryport=${QUERY_PORT}")
-fi
-
-if [ "${COMMUNITY,,}" = true ]; then
-    STARTCOMMAND+=("-publiclobby")
-fi
-
-if [ "${MULTITHREADING,,}" = true ]; then
-    STARTCOMMAND+=("-useperfthreads" "-NoAsyncLoadingThread" "-UseMultithreadForDS")
-fi
-
-LogAction "Checking for available container updates"
-container_version_check
-
-if [ "${DISABLE_GENERATE_SETTINGS,,}" = true ]; then
-  LogAction "GENERATING CONFIG"
-  LogWarn "Env vars will not be applied due to DISABLE_GENERATE_SETTINGS being set to TRUE!"
-
-  # shellcheck disable=SC2143
-  if [ ! "$(grep -s '[^[:space:]]' /palworld/Pal/Saved/Config/LinuxServer/PalWorldSettings.ini)" ]; then
-      LogAction "GENERATING CONFIG"
-      # Server will generate all ini files after first run.
-      if [ "$architecture" == "arm64" ]; then
-          timeout --preserve-status 15s ./PalServer-arm64.sh 1> /dev/null
-      else
-          timeout --preserve-status 15s ./PalServer.sh 1> /dev/null
-      fi
-
-      # Wait for shutdown
-      sleep 5
-      cp /palworld/DefaultPalWorldSettings.ini /palworld/Pal/Saved/Config/LinuxServer/PalWorldSettings.ini
-  fi
-else
-  LogAction "GENERATING CONFIG"
-  LogInfo "Using Env vars to create PalWorldSettings.ini"
-  /home/steam/server/compile-settings.sh || exit
-fi
-
-if [ "${DISABLE_GENERATE_ENGINE,,}" = false ]; then
-    /home/steam/server/compile-engine.sh || exit
-fi
-
 LogAction "GENERATING CRONTAB"
 truncate -s 0  "/home/steam/server/crontab"
 
@@ -133,13 +75,6 @@ if [ -s "/home/steam/server/crontab" ]; then
 else
     LogInfo "No Cronjobs found"
 fi
-
-# Configure RCON settings
-cat >/home/steam/server/rcon.yaml  <<EOL
-default:
-  address: "127.0.0.1:${RCON_PORT}"
-  password: "${ADMIN_PASSWORD}"
-EOL
 
 if [ "${ENABLE_PLAYER_LOGGING,,}" = true ] && [[ "${PLAYER_LOGGING_POLL_PERIOD}" =~ ^[0-9]+$ ]] && { [ "${REST_API_ENABLED,,}" = true ] || [ "${RCON_ENABLED,,}" = true ] ;} then
     if [[ "$(id -u)" -eq 0 ]]; then

@@ -114,8 +114,8 @@ RUN touch crontab && \
 	chmod o+w crontab /home/steam/Steam/package && \
 	chown steam:steam -R /home/steam/server
 
-HEALTHCHECK --start-period=5m \
-	CMD pgrep "SynServer-Linux" > /dev/null || exit 1
+# HEALTHCHECK --start-period=5m \
+# 	CMD pgrep "SynServer-Linux" > /dev/null || exit 1
 
-EXPOSE ${PORT} ${RCON_PORT}
-ENTRYPOINT ["/home/steam/server/init.sh"]
+EXPOSE 27015/tcp 27015/udp
+CMD ["/home/steam/server/init.sh"]

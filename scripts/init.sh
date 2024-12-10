@@ -18,6 +18,7 @@ elif [[ "$(id -u)" -eq 0 ]] || [[ "$(id -g)" -eq 0 ]]; then
 fi
 
 mkdir -p /home/steam/synergy/backups
+ln -s /home/steam/synergy /synergy
 
 # shellcheck disable=SC2317
 term_handler() {

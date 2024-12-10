@@ -61,14 +61,15 @@ jobs:
 
       - name: Test if port 8211, 27015 and 25575 are listening
         run: |
-            nc -z -u -v 127.0.0.1 27015 || exit 2
+            nc -z -v 127.0.0.1 27015 || exit 2
+            nc -z -u -v 127.0.0.1 27015 || exit 3
 
       - name: Test the backup script
         run: |
             docker exec synergy-server backup
             if [ ! -f ./synergy/backups/synergy-save-*.tar.gz ]; then
               echo "Backup file not found. Backup command may have failed."
-              exit 3
+              exit 4
             fi
 
   unit-test-arm64:
@@ -129,18 +130,19 @@ jobs:
 
       - name: Test if port 8211, 27015 and 25575 are listening
         run: |
-            nc -z -u -v 127.0.0.1 27015 || exit 2
+            nc -z -v 127.0.0.1 27015 || exit 2
+            nc -z -u -v 127.0.0.1 27015 || exit 3
 
       - name: Test the backup script
         run: |
             docker exec synergy-server-${{ github.run_id }} backup
-            if [ ! -f ./synergy-${{ github.run_id }}/backups/palworld-save-*.tar.gz ]; then
+            if [ ! -f ./synergy-${{ github.run_id }}/backups/synergy-save-*.tar.gz ]; then
               echo "Backup file not found. Backup command may have failed."
-              exit 3
+              exit 4
             fi
 
       - name: Stop server
         if: always()
         run: |
-            docker stop palworld-server-${{ github.run_id }}
-            docker rm palworld-server-${{ github.run_id }}
+            docker stop synergy-server-${{ github.run_id }}
+            docker rm synergy-server-${{ github.run_id }}
